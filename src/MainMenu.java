@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -29,7 +30,11 @@ public class MainMenu extends JFrame implements ActionListener
 	public MainMenu()
 	{
 		super("Name this Program you twats ;)");
+<<<<<<< HEAD
 		setSize(300, 500);
+=======
+		setSize(300, 1000);
+>>>>>>> branch 'master' of https://github.com/ahoopes16/dnd-project.git
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		BoxLayout grid = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
