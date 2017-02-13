@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -20,32 +21,43 @@ public class MainMenu extends JFrame implements ActionListener
 
 	JPanel[] rows = new JPanel[4];
 	JButton[] buttons = new JButton[3];
-	JLabel image = new JLabel(new ImageIcon("dndFun.jpg"));
+	JLabel image = new JLabel(new ImageIcon(new ImageIcon("dndFun.jpg").getImage().getScaledInstance(350, 200, Image.SCALE_DEFAULT)));
 	String[] buttonNames = {"GM Portal", "Player Portal", "Exit"};
-	Dimension buttonDim = new Dimension(50,50);
+	Dimension buttonDim = new Dimension(200,50);
+	Dimension panelDim = new Dimension(500, 50);
 	Dimension imageDim = new Dimension(200,200);
 	
 	public MainMenu()
 	{
 		super("Name this Program you twats ;)");
-		setSize(500, 700);
+		setSize(300, 500);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		GridLayout grid = new GridLayout(4, 1);
+		BoxLayout grid = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
 		setLayout(grid);
 		
 		FlowLayout flow = new FlowLayout(FlowLayout.CENTER);
+		//flow.setVgap(0);
 		for( int i = 0; i < rows.length; i++ )
 		{
 			rows[i] = new JPanel();
 			rows[i].setLayout(flow);
+			if ( i == 0 )
+			{
+				rows[i].setSize(imageDim);
+			}
+			else
+			{
+				rows[i].setSize(panelDim);
+			}
 		}
 		
 		for( int i = 0; i < buttons.length; i++)
 		{
 			buttons[i] = new JButton(buttonNames[i]);
 			buttons[i].addActionListener(this);
-			buttons[i].setSize(buttonDim);
+			buttons[i].setFont(new Font("Times New Roman", Font.BOLD, 16));
+			buttons[i].setPreferredSize(buttonDim);
 		}
 		
 		rows[0].add(image);
