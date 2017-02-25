@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
 
 
 /**
@@ -17,53 +19,45 @@ public class MainMenu extends JFrame implements ActionListener
 	 */
 	private static final long serialVersionUID = 1L;
 
-	JPanel[] rows = new JPanel[4];
+	JPanel[] rows = new JPanel[3];
 	JButton[] buttons = new JButton[3];
-	JLabel image = new JLabel(new ImageIcon(new ImageIcon("dndFun.jpg").getImage().getScaledInstance(350, 200, Image.SCALE_DEFAULT)));
 	String[] buttonNames = {"GM Portal", "Player Portal", "Exit"};
 	Dimension buttonDim = new Dimension(200,50);
-	Dimension panelDim = new Dimension(500, 50);
-	Dimension imageDim = new Dimension(200,200);
 	
 	public MainMenu()
 	{
 		super("Name this Program you twats ;)");
-		setSize(300, 500);
+		
+		try {
+		    final Image backgroundImage = javax.imageio.ImageIO.read(new File("./resources/dndFun.jpg"));
+		    setContentPane(new JPanel(new BorderLayout()) {
+				private static final long serialVersionUID = 3219358418679061612L;
+
+				@Override public void paintComponent(Graphics g) {
+		            g.drawImage(backgroundImage, 0, 0, null);
+		        }
+		    });
+		} catch (IOException e) {
+		    e.printStackTrace();;
+		}
+		
+		setSize(634, 384);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		BoxLayout grid = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
 		setLayout(grid);
 		
 		FlowLayout flow = new FlowLayout(FlowLayout.CENTER);
-		//flow.setVgap(0);
 		for( int i = 0; i < rows.length; i++ )
-		{
-			rows[i] = new JPanel();
-			rows[i].setLayout(flow);
-			if ( i == 0 )
-			{
-				rows[i].setSize(imageDim);
-			}
-			else
-			{
-				rows[i].setSize(panelDim);
-			}
-		}
-		
-		for( int i = 0; i < buttons.length; i++)
 		{
 			buttons[i] = new JButton(buttonNames[i]);
 			buttons[i].addActionListener(this);
 			buttons[i].setFont(new Font("Times New Roman", Font.BOLD, 16));
 			buttons[i].setPreferredSize(buttonDim);
-		}
-		
-		rows[0].add(image);
-		add(rows[0]);
-		
-		for( int i = 1; i < rows.length; i++ )
-		{
-			rows[i].add(buttons[i-1]);
+			rows[i] = new JPanel();
+			rows[i].setOpaque(false);
+			rows[i].setLayout(flow);
+			rows[i].add(buttons[i]);
 			add(rows[i]);
 		}
 		
