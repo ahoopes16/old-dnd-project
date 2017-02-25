@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
-
+import javax.imageio.ImageIO;
 
 /**
  * Class for the main menu of our DnD repository.
@@ -27,16 +27,21 @@ public class MainMenu extends JFrame implements ActionListener
 		super("DnD Repository");
 		
 		//set the background of the menu
-		try {
-		    final Image backgroundImage = javax.imageio.ImageIO.read(new File("./resources/dndFun.jpg"));
-		    setContentPane(new JPanel(new BorderLayout()) {
+		try 
+		{
+		    final Image backgroundImage = ImageIO.read(new File("./resources/dndFun.jpg"));
+		    setContentPane(new JPanel(new BorderLayout()) 
+		    {
 				private static final long serialVersionUID = 3219358418679061612L;
 
-				@Override public void paintComponent(Graphics g) {
+				@Override public void paintComponent(Graphics g) 
+				{
 		            g.drawImage(backgroundImage, 0, 0, null);
 		        }
 		    });
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 		    e.printStackTrace();;
 		}
 		
