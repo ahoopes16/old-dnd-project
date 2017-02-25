@@ -10,24 +10,23 @@ import java.io.IOException;
  * @author Kevin Hoopes and Dustin Roan
  * @version Feb. 12, 2017
  */
-
 public class MainMenu extends JFrame implements ActionListener
 {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	JPanel[] rows = new JPanel[3];
-	JButton[] buttons = new JButton[3];
-	String[] buttonNames = {"GM Portal", "Player Portal", "Exit"};
-	Dimension buttonDim = new Dimension(200,50);
+	private JPanel[] rows = new JPanel[3];
+	private JButton[] buttons = new JButton[3];
+	private final String[] buttonNames = {"GM Portal", "Player Portal", "Exit"};
+	private final Dimension buttonDim = new Dimension(200,50);
 	
+	/**
+	 * Constructor for the main menu of the DnD Repository
+	 */
 	public MainMenu()
 	{
-		super("Name this Program you twats ;)");
+		super("DnD Repository");
 		
+		//set the background of the menu
 		try {
 		    final Image backgroundImage = javax.imageio.ImageIO.read(new File("./resources/dndFun.jpg"));
 		    setContentPane(new JPanel(new BorderLayout()) {
@@ -47,6 +46,7 @@ public class MainMenu extends JFrame implements ActionListener
 		BoxLayout grid = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
 		setLayout(grid);
 		
+		//initialize buttons, panels, and add them to frame
 		FlowLayout flow = new FlowLayout(FlowLayout.CENTER);
 		for( int i = 0; i < rows.length; i++ )
 		{
@@ -64,18 +64,23 @@ public class MainMenu extends JFrame implements ActionListener
 		setVisible(true);
 	}
 	
+	/**
+	 * Implements the actions for each button
+	 * @param ae, the Action Event that triggers buttons
+	 */
 	public void actionPerformed(ActionEvent ae)
 	{
+		//Open the GM portal
 		if(ae.getSource() == buttons[0])
 		{
-			//will open GM Portal
 		}
 		
+		//Open the player portal
 		if(ae.getSource() == buttons[1])
 		{
-			//will open Player Portal
 		}
 		
+		//Exit the program
 		if(ae.getSource() == buttons[2])
 		{
 			System.out.println("Thanks for using our DnD Repository!");
@@ -83,6 +88,7 @@ public class MainMenu extends JFrame implements ActionListener
 		}
 	}
 	
+	//main method for test running in early stages
 	public static void main(String[] args)
 	{
 		MainMenu menu = new MainMenu();
