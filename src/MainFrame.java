@@ -49,6 +49,19 @@ public class MainFrame extends JFrame
 		
 		//adding the panel for main menu buttons
 		menuBtns = new MainButtonsPanel();
+		menuBtns.setWindowListener(new WindowListener() {
+			public void buttonPushed(String windowToOpen)
+			{
+				if(windowToOpen == "new")
+				{
+					NewCharFrame newCharFrame = new NewCharFrame();
+				}
+				else if(windowToOpen == "load")
+				{
+					LoadCharFrame loadCharFrame = new LoadCharFrame();
+				}
+			}
+		});
 		add(menuBtns, BorderLayout.EAST);
 	}
 }
