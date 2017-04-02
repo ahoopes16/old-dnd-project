@@ -1,5 +1,4 @@
 import java.awt.Dimension;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -9,6 +8,7 @@ import javax.swing.JPanel;
 
 public class MainButtonsPanel extends JPanel
 {
+	private static final long serialVersionUID = -1485661968812124763L;
 	private final Dimension PANEL_DIM = new Dimension(200,400);
 	private final Dimension BTN_DIM = new Dimension(130,50);
 	private final String[] BTN_NAMES = {"New", "Load", "Exit"};
