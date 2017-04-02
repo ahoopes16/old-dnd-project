@@ -13,7 +13,6 @@ public class MainFrame extends JFrame
 	private JLabel background;
 	private MainButtonsPanel menuBtns;
 	
-	
 	public MainFrame()
 	{
 		super( "Dungeons and Dragons Character Creator" );
@@ -28,6 +27,8 @@ public class MainFrame extends JFrame
 			System.out.println("Had an issue setting the look and feel.");
 			e.printStackTrace();
 		}
+		
+		//set the background image
 		try
 		{
 		background = new JLabel(new ImageIcon(ImageIO.read(BG_IMAGE)));
@@ -36,6 +37,8 @@ public class MainFrame extends JFrame
 		{
 			System.out.println("File Not Found");
 		}
+		
+		//frame preferences
 		setContentPane(background);
 		setLayout(new BorderLayout());
 		setSize( 400, 400 );
@@ -44,8 +47,8 @@ public class MainFrame extends JFrame
 		setVisible( true );
 		setLocationRelativeTo(null);
 		
+		//adding the panel for main menu buttons
 		menuBtns = new MainButtonsPanel();
 		add(menuBtns, BorderLayout.EAST);
-
 	}
 }
