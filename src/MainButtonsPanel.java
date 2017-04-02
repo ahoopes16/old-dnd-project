@@ -8,15 +8,15 @@ import javax.swing.JPanel;
 
 public class MainButtonsPanel extends JPanel
 {
-	private final Dimension panelDim = new Dimension(200,400);
-	private final Dimension btnDim = new Dimension(130,50);
-	private final String[] buttonNames = {"New", "Load", "Exit"};
+	private final Dimension PANEL_DIM = new Dimension(200,400);
+	private final Dimension BTN_DIM = new Dimension(130,50);
+	private final String[] BTN_NAMES = {"New", "Load", "Exit"};
 	private JButton[] buttonArray = new JButton[3];
 	
 	public MainButtonsPanel()
 	{
 		//set preferences for the panel
-		setPreferredSize(panelDim);
+		setPreferredSize(PANEL_DIM);
 		setBorder(BorderFactory.createEmptyBorder(85, 0, 100, 0));
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setOpaque(false);
@@ -24,11 +24,11 @@ public class MainButtonsPanel extends JPanel
 		//initialize and set up buttons
 		for(int i = 0; i < 3; i++)
 		{
-			buttonArray[i] = new JButton(buttonNames[i]);
+			buttonArray[i] = new JButton(BTN_NAMES[i]);
 			buttonArray[i].setAlignmentX(CENTER_ALIGNMENT);
-			buttonArray[i].setMinimumSize(btnDim);
-			buttonArray[i].setMaximumSize(btnDim);
-			buttonArray[i].setPreferredSize(btnDim);
+			buttonArray[i].setMinimumSize(BTN_DIM);
+			buttonArray[i].setMaximumSize(BTN_DIM);
+			buttonArray[i].setPreferredSize(BTN_DIM);
 			add(buttonArray[i]);
 			add(Box.createVerticalStrut(30));
 		}

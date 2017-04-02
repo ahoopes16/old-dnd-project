@@ -9,7 +9,7 @@ import javax.swing.UIManager;
 public class MainFrame extends JFrame 
 {
 	private static final long serialVersionUID = 2269971701250845501L;
-	private final File backgroundImage = new File(".//resources//dndMainImage.jpg");
+	private final File BG_IMAGE = new File(".//resources//dndMainImage.jpg");
 	private JLabel background;
 	private MainButtonsPanel menuBtns;
 	
@@ -30,7 +30,7 @@ public class MainFrame extends JFrame
 		}
 		try
 		{
-		background = new JLabel(new ImageIcon(ImageIO.read(backgroundImage)));
+		background = new JLabel(new ImageIcon(ImageIO.read(BG_IMAGE)));
 		}
 		catch(Exception e)
 		{
