@@ -38,11 +38,14 @@ public class MainFrame extends JFrame
 		}
 		setContentPane(background);
 		setLayout(new BorderLayout());
-		menuBtns = new MainButtonsPanel();
-		add(menuBtns, BorderLayout.EAST);
 		setSize( 400, 400 );
 		setResizable(false);
 		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		setVisible( true );
+		setLocationRelativeTo(null);
+		
+		menuBtns = new MainButtonsPanel();
+		add(menuBtns, BorderLayout.EAST);
+
 	}
 }

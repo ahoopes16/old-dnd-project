@@ -1,11 +1,12 @@
 import java.awt.Dimension;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class MainButtonsPanel extends JPanel 
+public class MainButtonsPanel extends JPanel
 {
 	private final Dimension panelDim = new Dimension(200,400);
 	private final Dimension btnDim = new Dimension(130,50);
