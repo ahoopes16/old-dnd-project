@@ -1,7 +1,5 @@
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.io.File;
-
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
