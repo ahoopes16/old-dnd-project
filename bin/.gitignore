@@ -14,3 +14,13 @@
 /WindowListener.class
 /MainFrame$1.class
 /LoadCharFrame.class
+/characterIdentifiers/
+/CharacterAlignment.class
+/CharacterSize.class
+/Demographics.class
+/Dice.class
+/Initiative.class
+/InitiativeManager.class
+/NewPlayerScreen.class
+/Player.class
+/PlayerMods.class
