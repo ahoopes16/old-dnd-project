@@ -1,9 +1,9 @@
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.io.File;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
@@ -12,8 +12,8 @@ public class MainFrame extends JFrame
 {
 	private static final long serialVersionUID = 2269971701250845501L;
 	private final File backgroundImage = new File(".//resources//dndMainImage.jpg");
-	JLabel background;
-	JButton btn;
+	private JLabel background;
+	private MainButtonsPanel menuBtns;
 	
 	
 	public MainFrame()
@@ -38,13 +38,10 @@ public class MainFrame extends JFrame
 		{
 			System.out.println("File Not Found");
 		}
-		
-		btn = new JButton("Bitch");
 		setContentPane(background);
-		
-		setLayout(new FlowLayout(FlowLayout.RIGHT));
-		add(btn);
-		
+		setLayout(new BorderLayout());
+		menuBtns = new MainButtonsPanel();
+		add(menuBtns, BorderLayout.EAST);
 		setSize( 400, 400 );
 		setResizable(false);
 		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
