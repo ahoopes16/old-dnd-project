@@ -1,4 +1,4 @@
-package characterIdentifiers;
+package model;
 /*
  * A class that holds the demographics of a character
  * @author Dustin

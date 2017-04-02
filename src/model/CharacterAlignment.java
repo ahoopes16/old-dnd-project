@@ -1,4 +1,4 @@
-package characterIdentifiers;
+package model;
 /*
  * An enum to define a list of character alignments
  * @author Dustin

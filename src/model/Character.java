@@ -1,4 +1,4 @@
-package characterIdentifiers;
+package model;
 /*
  * Class to house all of the information about a player. 
  * Currently also runs the data input screen but that will change**
@@ -13,9 +13,6 @@ import javax.swing.JOptionPane;
 public class Character implements Serializable
 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2838181524333516774L;
 
 	

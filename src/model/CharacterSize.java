@@ -1,4 +1,4 @@
-package characterIdentifiers;
+package model;
 /*
  * An enum to define and hold the the statistics for character size
  * @author Dustin
