@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import java.io.File;
+
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -50,18 +52,19 @@ public class MainFrame extends JFrame
 		//adding the panel for main menu buttons
 		menuBtns = new MainButtonsPanel();
 		menuBtns.setWindowListener(new WindowListener() {
-			public void buttonPushed(String windowToOpen)
+			public void buttonPushed(ActionEvent windowToOpen)
 			{
-				if(windowToOpen == "new")
+				if(windowToOpen.getActionCommand() == "new")
 				{
-					NewCharFrame newCharFrame = new NewCharFrame();
+					new NewCharFrame();
 				}
-				else if(windowToOpen == "load")
+				else if(windowToOpen.getActionCommand() == "load")
 				{
-					LoadCharFrame loadCharFrame = new LoadCharFrame();
+					new LoadCharFrame();
 				}
 			}
 		});
+		
 		add(menuBtns, BorderLayout.EAST);
 	}
 }

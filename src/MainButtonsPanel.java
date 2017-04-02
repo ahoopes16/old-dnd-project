@@ -37,6 +37,8 @@ public class MainButtonsPanel extends JPanel implements ActionListener
 			add(buttonArray[i]);
 			add(Box.createVerticalStrut(30));
 		}
+		buttonArray[0].setActionCommand("new");
+		buttonArray[1].setActionCommand("load");
 	}
 	
 	public void setWindowListener(WindowListener listener)
@@ -46,15 +48,11 @@ public class MainButtonsPanel extends JPanel implements ActionListener
 	
 	public void actionPerformed(ActionEvent ae)
 	{
-		if (ae.getSource() == buttonArray[0])
+		if (ae.getSource() != buttonArray[2])
 		{
-			listener.buttonPushed("new");
+			listener.buttonPushed(ae);
 		}
-		else if (ae.getSource() == buttonArray[1])
-		{
-			listener.buttonPushed("load");
-		}
-		else if (ae.getSource() == buttonArray[2])
+		else
 		{
 			System.out.println("Thanks for using this!");
 			System.exit(0);

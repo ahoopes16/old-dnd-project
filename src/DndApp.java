@@ -7,7 +7,7 @@ public class DndApp {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run()
 			{
-				MainFrame main = new MainFrame();
+				new MainFrame();
 			}
 		});
 

@@ -1,9 +1,8 @@
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
 import javax.swing.JFrame;
 
-public class NewCharFrame extends JFrame 
+public class NewCharFrame extends JFrame
 {
 	private static final long serialVersionUID = -4694649568870806659L;
 
