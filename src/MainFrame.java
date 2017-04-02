@@ -1,9 +1,18 @@
-import javax.swing.*;
+import java.awt.FlowLayout;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.UIManager;
 
 public class MainFrame extends JFrame 
 {
 	private static final long serialVersionUID = 2269971701250845501L;
-
+	JLabel background;
+	JButton btn;
 	public MainFrame()
 	{
 		super( "Dungeons and Dragons Character Creator" );
@@ -18,7 +27,20 @@ public class MainFrame extends JFrame
 			System.out.println("Had an issue setting the look and feel.");
 			e.printStackTrace();
 		}
-		setSize( 600,500 );
+		try
+		{
+		background = new JLabel(new ImageIcon(ImageIO.read(new File(".//resources//dndFun.jpg"))));
+		}
+		catch(Exception e)
+		{
+			System.out.println("File Not Found");
+		}
+		
+		btn = new JButton("Bitch");
+		setContentPane(background);
+		setLayout(new FlowLayout());
+		add(btn);
+		setSize( 500, 400 );
 		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		setVisible( true );
 	}
