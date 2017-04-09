@@ -2,7 +2,7 @@ package model;
 /*
  * Class to house all of the information about a player. 
  * Currently also runs the data input screen but that will change**
- * @author Dustin
+ * @author Dustin Roan
  * @version 27 January 2017
  */
 import java.io.Serializable;

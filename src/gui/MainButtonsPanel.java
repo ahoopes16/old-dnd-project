@@ -2,12 +2,18 @@ package gui;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+/**
+ * Panel that handles the buttons on the main menu screen
+ * @author Alex Hoopes
+ * @author Dustin Roan
+ * @version 2 April 2017
+ */
 
 public class MainButtonsPanel extends JPanel implements ActionListener
 {
@@ -18,6 +24,9 @@ public class MainButtonsPanel extends JPanel implements ActionListener
 	private JButton[] buttonArray = new JButton[3];
 	private WindowListener listener;
 	
+	/**
+	 * Default Constructor
+	 */
 	public MainButtonsPanel()
 	{
 		//set preferences for the panel
@@ -42,11 +51,18 @@ public class MainButtonsPanel extends JPanel implements ActionListener
 		buttonArray[1].setActionCommand("load");
 	}
 	
+	/**
+	 * This sets the action event listener for the panel
+	 * @param listener a WindowListener event listener
+	 */
 	public void setWindowListener(WindowListener listener)
 	{
 		this.listener = listener;
 	}
 	
+	/**
+	 * The event handler for the panel
+	 */
 	public void actionPerformed(ActionEvent ae)
 	{
 		if (ae.getSource() != buttonArray[2])

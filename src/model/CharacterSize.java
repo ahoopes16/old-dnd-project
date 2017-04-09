@@ -1,7 +1,7 @@
 package model;
 /*
  * An enum to define and hold the the statistics for character size
- * @author Dustin
+ * @author Dustin Roan
  * @version 27 January 2017
  */
 public enum CharacterSize 

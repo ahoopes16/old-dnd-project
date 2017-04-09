@@ -2,12 +2,18 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.io.File;
-
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
+
+/**
+ * Handles the main functions in the main menu frame of the program
+ * @author Alex Hoopes
+ * @author Dustin Roan
+ * @version 2 April 2017
+ */
 
 public class MainFrame extends JFrame 
 {
@@ -16,6 +22,9 @@ public class MainFrame extends JFrame
 	private JLabel background;
 	private MainButtonsPanel menuBtns;
 	
+	/**
+	 * Default constructor
+	 */
 	public MainFrame()
 	{
 		super( "Dungeons and Dragons Character Creator" );
