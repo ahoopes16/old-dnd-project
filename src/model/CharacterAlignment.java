@@ -1,7 +1,7 @@
 package model;
 /*
  * An enum to define a list of character alignments
- * @author Dustin Roan
+ * @author Dustin
  * @version 27 January 2017
  */
 public enum CharacterAlignment {LawfulGood, NeutralGood, ChaoticGood,
