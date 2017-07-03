@@ -2,11 +2,10 @@ package model;
 /*
  * Class to house all of the information about a player. 
  * Currently also runs the data input screen but that will change**
- * @author Dustin Roan
+ * @author Dustin
  * @version 27 January 2017
  */
 import java.io.Serializable;
-import java.util.Arrays;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -93,14 +92,5 @@ public class Character implements Serializable
 	{
 		Character Dustin = new Character();
 		Dustin.printCharacter();
-		System.out.println(Dustin.toString());
-	}
-	@Override
-	public String toString() {
-		return "Character [playerName=" + playerName + ", characterName=" + characterName + ", characterRace="
-				+ characterRace + ", characterClass=" + characterClass + ", characterDeity=" + characterDeity
-				+ ", characterLevel=" + characterLevel + ", alignment=" + alignment + ", frame=" + frame
-				+ ", classOptions=" + Arrays.toString(classOptions) + ", raceOptions=" + Arrays.toString(raceOptions)
-				+ ", alignments=" + Arrays.toString(alignments) + "]";
 	}
 }
