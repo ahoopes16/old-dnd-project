@@ -1,8 +1,6 @@
 package model;
 /*
  * An enum to define and hold the the statistics for character size
- * @author Dustin
- * @version 27 January 2017
  */
 public enum CharacterSize 
 {
@@ -19,14 +17,16 @@ public enum CharacterSize
 	private final int attACMod;
 	private final int specAttMod;
 	private final int hideMod;
+
 	CharacterSize(int attACMod, int specAttMod, int hideMod)
 	{
 		this.attACMod = attACMod;
 		this.specAttMod = specAttMod;
 		this.hideMod = hideMod;
 	}
-	public int attACMod() {return attACMod;}
-	public int specAttMod() {return specAttMod;}
-	public int hideMod() {return hideMod;}	
+
+	public int getAttACMod() {return attACMod;}
+	public int getSpecAttMod() {return specAttMod;}
+	public int getHideMod() {return hideMod;}
 }
 
