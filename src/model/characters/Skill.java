@@ -1,10 +1,10 @@
-package model;
+package model.characters;
 
 public class Skill
 {
-    String skillName;
-    Integer skillLevel;
-    boolean isTrained;
+    private String skillName;
+    private Integer skillLevel;
+    private boolean isTrained;
 
     public Skill(String skillName, Integer skillLevel, boolean isTrained) {
         this.skillName = skillName;

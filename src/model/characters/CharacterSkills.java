@@ -1,4 +1,4 @@
-package model;
+package model.characters;
 
 import java.util.Arrays;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by Dustin on 7/5/2017.
  */
 public class CharacterSkills {
-    private String[] skillNames = {
+    private final String[] SKILL_NAMES = {
             "Acrobatics",
             "Animal Handling",
             "Arcana",
@@ -30,11 +30,11 @@ public class CharacterSkills {
     private Skill[] skillsList;
 
     public CharacterSkills() {
-        skillsList = new Skill[skillNames.length];{
+        skillsList = new Skill[SKILL_NAMES.length];{
         }
-        for (int i = 0; i < skillNames.length; i++)
+        for (int i = 0; i < SKILL_NAMES.length; i++)
         {
-            skillsList[i] = (new Skill(skillNames[i],0, false));
+            skillsList[i] = (new Skill(SKILL_NAMES[i],0, false));
         }
     }
 
@@ -43,7 +43,7 @@ public class CharacterSkills {
     }
 
     public void trainSkill(String skillName){
-        Skill skill = skillsList[Arrays.binarySearch(skillNames, skillName)];
+        Skill skill = skillsList[Arrays.binarySearch(SKILL_NAMES, skillName)];
         if(skill.isTrained()){
             //Temporary
             System.out.println("Skill already trained");
@@ -56,7 +56,7 @@ public class CharacterSkills {
 
     public void increaseSkill(String skillName, int levels){
         if(levels > 0) {
-            Skill skill = skillsList[Arrays.binarySearch(skillNames, skillName)];
+            Skill skill = skillsList[Arrays.binarySearch(SKILL_NAMES, skillName)];
             skill.updateSkillLevel(levels);
         }
     }

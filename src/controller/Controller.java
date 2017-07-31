@@ -1,6 +1,6 @@
 package controller;
 
-import model.Character;
+import model.characters.Character;
 
 public class Controller {
     public static void main(String[] args)
