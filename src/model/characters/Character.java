@@ -32,7 +32,7 @@ public class Character implements Serializable
         characterRace = RACE_OPTIONS[0];
         characterClass = CLASS_OPTIONS[0];
 //        characterAlignment = alignments[0];
-        characterDeity = "Character Diety";
+        characterDeity = "Character Deity";
         characterLevel = 0;
         alignment = null;
         demographics = new Demographics(CharacterSize.Medium,0,0,null,null,null,null,null);
