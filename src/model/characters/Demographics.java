@@ -1,6 +1,7 @@
 package model.characters;
 
 import model.characters.enums.CharacterSize;
+import model.characters.enums.CharacterAlignment;
 
 /*
  * A class that holds the demographics of a character

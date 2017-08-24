@@ -20,7 +20,8 @@ public class Character implements Serializable
 	private CharacterAlignment alignment;
 	private Demographics demographics;
 	private String characterDeity;
-	private CharacterMods mods;
+	private CharacterAttributes attributes;
+	private CharacterAbilities abilities;
 
     private static final String[] CLASS_OPTIONS = {"class","Barbarian", "Bard", "Druid", "Monk", "Paladin", "Ranger", "Sorcerer", "Warlock"};
 	private static final String[] RACE_OPTIONS = {"race","Dragonborn", "Dwarf", "Eladrin", "Elf", "Gnome", "Half-elf", "Half-orc", "Halfling", "Human", "Tiefling"};
@@ -36,11 +37,11 @@ public class Character implements Serializable
         characterLevel = 0;
         alignment = null;
         demographics = new Demographics(CharacterSize.Medium,0,0,null,null,null,null,null);
-        mods = new CharacterMods();
+        attributes = new CharacterAttributes();
     }
 
 	public Character(String playerName, String characterName, int characterLevel, String characterRace, String characterClass,
-					 CharacterAlignment alignment, Demographics demographics, String characterDeity, CharacterMods mods)
+					 CharacterAlignment alignment, Demographics demographics, String characterDeity, CharacterAttributes attributes)
 	{
 		this.playerName = playerName;
 		this.characterName = characterName;
@@ -50,7 +51,7 @@ public class Character implements Serializable
 		this.alignment = alignment;
 		this.demographics = demographics;
 		this.characterDeity = characterDeity;
-		this.mods = mods;
+		this.attributes = attributes;
 	}
 
 	public String getPlayerName() {
@@ -117,12 +118,12 @@ public class Character implements Serializable
         this.demographics = demographics;
     }
 
-    public CharacterMods getMods() {
-		return mods;
+    public CharacterAttributes getAttributes() {
+		return attributes;
 	}
 
-	public void setMods(CharacterMods mods) {
-		this.mods = mods;
+	public void setAttributes(CharacterAttributes attributes) {
+		this.attributes = attributes;
 	}
 
 //    public String getCharacterAlignment() {
@@ -156,6 +157,6 @@ public class Character implements Serializable
 				"- alignment=" + alignment + '\n' +
 				"- characterDeity='" + characterDeity + '\n' +
 				demographics + '\n' +
-				mods;
+				attributes;
 	}
 }

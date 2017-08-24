@@ -9,7 +9,7 @@ public class Skill
     public Skill(String skillName, Integer skillLevel, boolean isTrained) {
         this.skillName = skillName;
         this.skillLevel = skillLevel;
-        this.isTrained = isTrained;
+        this.isTrained = false;
     }
 
     public String getSkillName() {
