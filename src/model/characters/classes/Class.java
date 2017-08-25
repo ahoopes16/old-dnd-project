@@ -1,6 +1,8 @@
 package model.characters.classes;
 import model.Dice;
 
+import java.util.Arrays;
+
 public abstract class Class {
     private String name;
     private Dice hitDice;
@@ -98,4 +100,18 @@ public abstract class Class {
     public String[] getStartingFeats() { return startingFeats; }
 
     public void setStartingFeats(String[] startingFeats) { this.startingFeats = startingFeats; }
+
+    @Override
+    public String toString() {
+        return "Class: " + name +
+                "\n Hit Dice: " + hitDice +
+                "\n Base HP: " + baseHitPoints +
+                "\n Armor Proficiencies: " + armor +
+                "\n Weapons Proficiencies: " + weapons +
+                "\n Tool Proficiencies: " + tools +
+                "\n Saving Throws: " + savingThrows +
+                "\n Trainable Skills: " + skills +
+                "\n Skills Count: " + skillsCount +
+                "\n Starting Feats: " + Arrays.toString(startingFeats);
+    }
 }

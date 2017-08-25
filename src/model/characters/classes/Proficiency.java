@@ -29,6 +29,6 @@ public class Proficiency {
 
     @Override
     public String toString() {
-        return name + ':' + Arrays.toString(proficiencies);
+        return Arrays.toString(proficiencies);
     }
 }
