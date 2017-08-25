@@ -32,7 +32,9 @@ public class BardClass extends Class {
                     "Religion",
                     "Slight of Hand",
                     "Stealth",
-                    "Survival"})
+                    "Survival"}),
+            3,
+            new String[] {"Spellcasting", "Bardic Inspiration (d6)"}
         );
     }
 }

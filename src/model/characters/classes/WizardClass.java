@@ -13,7 +13,9 @@ public class WizardClass extends Class {
             new Proficiency("Weapons", new String[]{"Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbow"}),
             new Proficiency("Tools", new String[] {"None"}),
             new Proficiency("Saving Throws", new String[] {"Intelligence", "Wisdom"}),
-            new Proficiency("Skills", new String[] {"Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"})
+            new Proficiency("Skills", new String[] {"Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"}),
+            2,
+            new String[] {"Spellcasting", "Arcane Recovery"}
         );
     }
 }

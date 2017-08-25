@@ -12,7 +12,9 @@ public class RogueClass extends Class {
             new Proficiency("Weapons", new String[]{"Simple Weapons", "Hand Crossbows", "Longswords", "Rapiers", "Shortswords"}),
             new Proficiency("Tools", new String[] {"Theieves' Tools"}),
             new Proficiency("Saving Throws", new String[] {"Dexterity", "Intelligence"}),
-            new Proficiency("Skills", new String[] {"Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", " Sleight of Hand", "Stealth"})
+            new Proficiency("Skills", new String[] {"Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", " Sleight of Hand", "Stealth"}),
+            4,
+            new String[] {"Expertise", "Sneak Attack", "Thieves' Cant"}
         );
     }
 }

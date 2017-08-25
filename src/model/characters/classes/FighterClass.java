@@ -12,7 +12,9 @@ public class FighterClass extends Class {
             new Proficiency("Weapons", new String[]{"Simple Weapons", "Martial Weapons"}),
             new Proficiency("Tools", new String[] {"None"}),
             new Proficiency("Saving Throws", new String[] {"Strength", "Constitution"}),
-            new Proficiency("Skills", new String[] {"Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"})
+            new Proficiency("Skills", new String[] {"Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"}),
+            2,
+            new String[] {"Fighting Style", "Second Wind"}
         );
     }
 }

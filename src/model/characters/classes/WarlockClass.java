@@ -12,6 +12,9 @@ public class WarlockClass extends Class {
             new Proficiency("Weapons", new String[]{"Simple Weapons"}),
             new Proficiency("Tools", new String[] {"None"}),
             new Proficiency("Saving Throws", new String[] {"Wisdom", "Charisma"}),
-            new Proficiency("Skills", new String[] {"Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"})
-        );    }
+            new Proficiency("Skills", new String[] {"Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"}),
+            2,
+            new String[] {"Otherworldly Patron", "Pact Magic"}
+        );
+    }
 }

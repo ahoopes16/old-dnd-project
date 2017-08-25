@@ -12,7 +12,9 @@ public class MonkClass extends Class {
             new Proficiency("Weapons", new String[]{"Simple Weapons", "Shortswords"}),
             new Proficiency("Tools", new String[] {"Choose one type of artisan's tools or one musical instrument"}),
             new Proficiency("Saving Throws", new String[] {"Strength", "Dexterity"}),
-            new Proficiency("Skills", new String[] {"Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"})
+            new Proficiency("Skills", new String[] {"Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"}),
+            2,
+            new String[] {"Unarmored Defense", "Martial Arts"}
         );
     }
 }

@@ -10,8 +10,11 @@ public abstract class Class {
     private Proficiency tools;
     private Proficiency savingThrows;
     private Proficiency skills;
+    private int skillsCount;
+    private String[] startingFeats;
 
-    public Class(String name, Dice hitDice, int baseHitPoints, Proficiency armor, Proficiency weapons, Proficiency tools, Proficiency savingThrows, Proficiency skills) {
+    public Class(String name, Dice hitDice, int baseHitPoints, Proficiency armor, Proficiency weapons, Proficiency tools,
+                 Proficiency savingThrows, Proficiency skills, int skillsCount, String[] startingFeats) {
         this.name = name;
         this.hitDice = hitDice;
         this.baseHitPoints = baseHitPoints;
@@ -20,6 +23,8 @@ public abstract class Class {
         this.tools = tools;
         this.savingThrows = savingThrows;
         this.skills = skills;
+        this.skillsCount = skillsCount;
+        this.startingFeats = startingFeats;
     }
 
     public String getName() {
@@ -85,4 +90,12 @@ public abstract class Class {
     public void setSkills(Proficiency skills) {
         this.skills = skills;
     }
+
+    public int getSkillsCount() { return skillsCount; }
+
+    public void setSkillsCount(int skillsCount) { this.skillsCount = skillsCount; }
+
+    public String[] getStartingFeats() { return startingFeats; }
+
+    public void setStartingFeats(String[] startingFeats) { this.startingFeats = startingFeats; }
 }

@@ -12,7 +12,9 @@ public class PaladinClass extends Class {
             new Proficiency("Weapons", new String[]{"Simple Weapons", "Martial Weapons"}),
             new Proficiency("Tools", new String[] {"None"}),
             new Proficiency("Saving Throws", new String[] {"Wisdom", "Charisma"}),
-            new Proficiency("Skills", new String[] {"Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"})
+            new Proficiency("Skills", new String[] {"Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"}),
+            2,
+            new String[] {"Divine Sense", "Lay On Hands"}
         );
     }
 }

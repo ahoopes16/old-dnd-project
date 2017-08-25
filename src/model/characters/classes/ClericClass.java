@@ -12,7 +12,9 @@ public class ClericClass extends Class {
             new Proficiency("Weapons", new String[]{"Simple Weapons"}),
             new Proficiency("Tools", new String[] {"None"}),
             new Proficiency("Saving Throws", new String[] {"Wisdom", "Charisma"}),
-            new Proficiency("Skills", new String[] {"History", "Insight", "Medicine", "Persuasion", "Religion"})
+            new Proficiency("Skills", new String[] {"History", "Insight", "Medicine", "Persuasion", "Religion"}),
+            2,
+            new String[] {"Spellcasting", "Divine Domain"}
         );
     }
 }

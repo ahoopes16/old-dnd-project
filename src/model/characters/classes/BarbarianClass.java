@@ -12,7 +12,9 @@ public class BarbarianClass extends Class {
             new Proficiency("Weapons", new String[]{"Simple Weapons", "Martial Weapons"}),
             new Proficiency("Tools", new String[] {"None"}),
             new Proficiency("Saving Throws", new String[] {"Strength", "Constitution"}),
-            new Proficiency("Skills", new String[] {"Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"})
+            new Proficiency("Skills", new String[] {"Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"}),
+            2,
+            new String[] {"Rage", "Unarmored Defense"}
         );
     }
 }

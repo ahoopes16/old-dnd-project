@@ -12,7 +12,9 @@ public class SorcererClass extends Class {
             new Proficiency("Weapons", new String[]{"Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbow"}),
             new Proficiency("Tools", new String[] {"None"}),
             new Proficiency("Saving Throws", new String[] {"Constitution", "Charisma"}),
-            new Proficiency("Skills", new String[] {"Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"})
+            new Proficiency("Skills", new String[] {"Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"}),
+            2,
+            new String[] {"Spellcasting", "Sorcerous Origin"}
         );
     }
 }

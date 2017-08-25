@@ -12,7 +12,9 @@ public class DruidClass extends Class {
             new Proficiency("Weapons", new String[]{"Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears"}),
             new Proficiency("Tools", new String[] {"Herbalism Kit"}),
             new Proficiency("Saving Throws", new String[] {"Intelligence", "Wisdom"}),
-            new Proficiency("Skills", new String[] {"Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"})
+            new Proficiency("Skills", new String[] {"Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"}),
+            2,
+            new String[] {"Spellcasting", "Druidic"}
         );
     }
 }
