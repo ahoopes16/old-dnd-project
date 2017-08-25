@@ -11,6 +11,17 @@ public abstract class Class {
     private Proficiency savingThrows;
     private Proficiency skills;
 
+    public Class(String name, Dice hitDice, int baseHitPoints, Proficiency armor, Proficiency weapons, Proficiency tools, Proficiency savingThrows, Proficiency skills) {
+        this.name = name;
+        this.hitDice = hitDice;
+        this.baseHitPoints = baseHitPoints;
+        this.armor = armor;
+        this.weapons = weapons;
+        this.tools = tools;
+        this.savingThrows = savingThrows;
+        this.skills = skills;
+    }
+
     public String getName() {
         return name;
     }
