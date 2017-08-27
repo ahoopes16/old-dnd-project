@@ -37,4 +37,9 @@ public class Ability {
     public int getModifier() {
         return modifier;
     }
+
+    public void add(Ability ab){
+        if(this.name == ab.getName())
+            this.value += ab.getValue();
+    }
 }
