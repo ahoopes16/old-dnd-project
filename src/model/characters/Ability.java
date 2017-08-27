@@ -39,7 +39,12 @@ public class Ability {
     }
 
     public void add(Ability ab){
-        if(this.name == ab.getName())
-            this.value += ab.getValue();
+        if (this.name == ab.getName())
+            setValue(this.value += ab.getValue());
+    }
+
+    @Override
+    public String toString() {
+        return name + ": " + value + " (" + modifier + ")";
     }
 }

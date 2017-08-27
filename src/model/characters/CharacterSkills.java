@@ -30,8 +30,8 @@ public class CharacterSkills {
     private Skill[] skillsList;
 
     public CharacterSkills() {
-        skillsList = new Skill[SKILL_NAMES.length];{
-        }
+        skillsList = new Skill[SKILL_NAMES.length];
+
         for (int i = 0; i < SKILL_NAMES.length; i++)
         {
             skillsList[i] = (new Skill(SKILL_NAMES[i],0, false));
@@ -64,10 +64,9 @@ public class CharacterSkills {
     public String toString() {
         StringBuilder text = new StringBuilder();
         text.append("Character Skills:\n");
+
         for(Skill skill: skillsList)
-        {
             text.append("- " + skill.toString() + "\n");
-        }
 
         return text.toString();
     }

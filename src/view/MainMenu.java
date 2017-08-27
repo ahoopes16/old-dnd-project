@@ -9,9 +9,9 @@ import javafx.stage.Stage;
 
 public class MainMenu extends Application 
 {
-	Button newButton;
-	Button loadButton;
-	Button exitButton;
+	private Button newButton;
+	private Button loadButton;
+	private Button exitButton;
 	
 	public static void main(String[] args) 
 	{
