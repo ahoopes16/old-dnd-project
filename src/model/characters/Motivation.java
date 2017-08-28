@@ -9,9 +9,7 @@ public class Motivation {
         this.description = null;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;
@@ -23,5 +21,10 @@ public class Motivation {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return name + ": " + description;
     }
 }
