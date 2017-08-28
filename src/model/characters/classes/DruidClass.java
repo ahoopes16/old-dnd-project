@@ -3,7 +3,7 @@ package model.characters.classes;
 import model.Dice;
 
 public class DruidClass extends Class {
-    public DruidClass(String name, Dice hitDice, int baseHitPoints, Proficiency armor, Proficiency weapons, Proficiency tools, Proficiency savingThrows, Proficiency skills) {
+    public DruidClass() {
         super(
             "Druid",
             new Dice(1,8),

@@ -3,7 +3,7 @@ package model.characters.classes;
 import model.Dice;
 
 public class ClericClass extends Class {
-    public ClericClass(String name, Dice hitDice, int baseHitPoints, Proficiency armor, Proficiency weapons, Proficiency tools, Proficiency savingThrows, Proficiency skills) {
+    public ClericClass() {
         super(
             "Cleric",
             new Dice(1,8),

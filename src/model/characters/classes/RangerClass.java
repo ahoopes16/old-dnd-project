@@ -3,7 +3,7 @@ package model.characters.classes;
 import model.Dice;
 
 public class RangerClass extends Class {
-    public RangerClass(String name, Dice hitDice, int baseHitPoints, Proficiency armor, Proficiency weapons, Proficiency tools, Proficiency savingThrows, Proficiency skills) {
+    public RangerClass() {
         super(
             "Ranger",
             new Dice(1,10),

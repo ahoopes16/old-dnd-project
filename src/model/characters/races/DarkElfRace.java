@@ -8,6 +8,7 @@ public class DarkElfRace extends Race {
                 "Dark Elf(Drow)",
                 30,
                 new Ability[]{new Ability("Dexterity", 2), new Ability("Charisma", 1)},
-                new String[]{"Superior Darkvision", "Keen Senses", "Fey Ancestry", "Trance", "Sunlight Sensitivity", "Drow Magic", "Drow Weapon Training"});
+                new String[]{"Superior Darkvision", "Keen Senses", "Fey Ancestry", "Trance",
+                        "Sunlight Sensitivity", "Drow Magic", "Drow Weapon Training"});
     }
 }
