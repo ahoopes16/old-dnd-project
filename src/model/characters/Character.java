@@ -3,8 +3,10 @@ package model.characters;
  * Class to house all of the information about a player. 
  * Currently also runs the data input screen but that will change**
  */
+import model.characters.classes.Class;
 import model.characters.enums.CharacterAlignment;
 import model.characters.enums.CharacterSize;
+import model.characters.races.Race;
 
 import java.io.Serializable;
 
@@ -14,101 +16,88 @@ public class Character implements Serializable
 	private static final long serialVersionUID = -2838181524333516774L;
 	private String playerName;
 	private String characterName;
-	private int characterLevel; //currentExperience
-	private String characterRace;
-	private String characterClass;
+	private int characterLevel;
+	private Race characterRace;
+	private Class characterClass;
 	private CharacterAlignment alignment;
 	private Demographics demographics;
 	private String characterDeity;
 	private CharacterAttributes attributes;
 	private CharacterAbilities abilities;
+	private CharacterSkills skills;
+	private CharacterMotivations motivations;
 
     private static final String[] CLASS_OPTIONS = {"class","Barbarian", "Bard", "Druid", "Monk", "Paladin", "Ranger", "Sorcerer", "Warlock"};
 	private static final String[] RACE_OPTIONS = {"race","Dragonborn", "Dwarf", "Eladrin", "Elf", "Gnome", "Half-elf", "Half-orc", "Halfling", "Human", "Tiefling"};
 	private static final String[] ALIGNMENTS = {"alignment","LawfulGood", "NeutralGood", "ChaoticGood", "LawfulNeutral", "Neutral", "ChaoticNeutral", "LawfulEvil", "NeutralEvil"};
 
-    public Character() {
-        playerName = "Player Name";
-        characterName = "Character Name";
-        characterRace = RACE_OPTIONS[0];
-        characterClass = CLASS_OPTIONS[0];
-//        characterAlignment = alignments[0];
-        characterDeity = "Character Deity";
-        characterLevel = 0;
-        alignment = null;
-        demographics = new Demographics(CharacterSize.Medium,0,0,null,null,null,null,null);
-        attributes = new CharacterAttributes();
+    public Character(String playerName, String characterName, int characterLevel, Race characterRace, Class characterClass, CharacterAlignment alignment, Demographics demographics,
+                     String characterDeity, CharacterAttributes attributes, CharacterAbilities abilities, CharacterSkills skills, CharacterMotivations motivations) {
+        this.playerName = playerName;
+        this.characterName = characterName;
+        this.characterLevel = characterLevel;
+        this.characterRace = characterRace;
+        this.characterClass = characterClass;
+        this.alignment = alignment;
+        this.demographics = demographics;
+        this.characterDeity = characterDeity;
+        this.attributes = attributes;
+        this.abilities = abilities;
+        this.skills = skills;
+        this.motivations = motivations;
     }
 
-	public Character(String playerName, String characterName, int characterLevel, String characterRace, String characterClass,
-					 CharacterAlignment alignment, Demographics demographics, String characterDeity, CharacterAttributes attributes)
-	{
-		this.playerName = playerName;
-		this.characterName = characterName;
-		this.characterLevel = characterLevel;
-		this.characterRace = characterRace;
-		this.characterClass = characterClass;
-		this.alignment = alignment;
-		this.demographics = demographics;
-		this.characterDeity = characterDeity;
-		this.attributes = attributes;
-	}
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-	public String getPlayerName() {
-		return playerName;
-	}
+    public String getPlayerName() {
+        return playerName;
+    }
 
-	public void setPlayerName(String playerName) {
-		this.playerName = playerName;
-	}
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
 
-	public String getCharacterName() {
-		return characterName;
-	}
+    public String getCharacterName() {
+        return characterName;
+    }
 
-	public void setCharacterName(String characterName) {
-		this.characterName = characterName;
-	}
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
+    }
 
-	public String getCharacterRace() {
-		return characterRace;
-	}
+    public int getCharacterLevel() {
+        return characterLevel;
+    }
 
-	public void setCharacterRace(String characterRace) {
-		this.characterRace = characterRace;
-	}
+    public void setCharacterLevel(int characterLevel) {
+        this.characterLevel = characterLevel;
+    }
 
-	public String getCharacterClass() {
-		return characterClass;
-	}
+    public Race getCharacterRace() {
+        return characterRace;
+    }
 
-	public void setCharacterClass(String characterClass) {
-		this.characterClass = characterClass;
-	}
+    public void setCharacterRace(Race characterRace) {
+        this.characterRace = characterRace;
+    }
 
-	public String getCharacterDeity() {
-		return characterDeity;
-	}
+    public Class getCharacterClass() {
+        return characterClass;
+    }
 
-	public void setCharacterDeity(String characterDeity) {
-		this.characterDeity = characterDeity;
-	}
+    public void setCharacterClass(Class characterClass) {
+        this.characterClass = characterClass;
+    }
 
-	public int getCharacterLevel() {
-		return characterLevel;
-	}
+    public CharacterAlignment getAlignment() {
+        return alignment;
+    }
 
-	public void setCharacterLevel(int characterLevel) {
-		this.characterLevel = characterLevel;
-	}
-
-	public CharacterAlignment getAlignment() {
-		return alignment;
-	}
-
-	public void setAlignment(CharacterAlignment alignment) {
-		this.alignment = alignment;
-	}
+    public void setAlignment(CharacterAlignment alignment) {
+        this.alignment = alignment;
+    }
 
     public Demographics getDemographics() {
         return demographics;
@@ -118,45 +107,63 @@ public class Character implements Serializable
         this.demographics = demographics;
     }
 
+    public String getCharacterDeity() {
+        return characterDeity;
+    }
+
+    public void setCharacterDeity(String characterDeity) {
+        this.characterDeity = characterDeity;
+    }
+
     public CharacterAttributes getAttributes() {
-		return attributes;
-	}
+        return attributes;
+    }
 
-	public void setAttributes(CharacterAttributes attributes) {
-		this.attributes = attributes;
-	}
+    public void setAttributes(CharacterAttributes attributes) {
+        this.attributes = attributes;
+    }
 
-//    public String getCharacterAlignment() {
-//        return characterAlignment;
-//    }
-//
-//    public void setCharacterAlignment(String characterAlignment) {
-//        this.characterAlignment = characterAlignment;
-//    }
+    public CharacterAbilities getAbilities() {
+        return abilities;
+    }
 
-    public String[] getClassOptions() {
-		return CLASS_OPTIONS;
-	}
+    public void setAbilities(CharacterAbilities abilities) {
+        this.abilities = abilities;
+    }
 
-	public String[] getRaceOptions() {
-		return RACE_OPTIONS;
-	}
+    public CharacterSkills getSkills() {
+        return skills;
+    }
 
-	public String[] getAlignments() {
-		return ALIGNMENTS;
-	}
+    public void setSkills(CharacterSkills skills) {
+        this.skills = skills;
+    }
 
-	@Override
-	public String toString() {
-		return "Character:" + '\n' +
-				"- playerName='" + playerName + '\n' +
-				"- characterName='" + characterName + '\n' +
-				"- characterLevel=" + characterLevel + '\n' +
-				"- characterRace='" + characterRace + '\n' +
-				"- characterClass='" + characterClass + '\n' +
-				"- alignment=" + alignment + '\n' +
-				"- characterDeity='" + characterDeity + '\n' +
-				demographics + '\n' +
-				attributes;
-	}
+    public CharacterMotivations getMotivations() {
+        return motivations;
+    }
+
+    public void setMotivations(CharacterMotivations motivations) {
+        this.motivations = motivations;
+    }
+
+    @Override
+    public String toString() {
+        return playerName +
+                "\n Character Name: " + characterName +
+                "\n Character Level: " + characterLevel +
+                "\n Character Race: " + characterRace +
+                "\n Character Class: " + characterClass +
+                "\n Alignment: " + alignment +
+                "\n Demographics: " + demographics +
+                "\n Character Deity: " + characterDeity +
+                "\n Attributes: " + attributes +
+                "\n Abilities: " + abilities +
+                "\n Skills: " + skills +
+                "\n Motivations: " + motivations;
+    }
+
+    public static void main(String[] args) {
+        //test things here soonish
+    }
 }

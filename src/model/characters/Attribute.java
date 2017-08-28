@@ -1,8 +1,8 @@
 package model.characters;
 
 public class Attribute {
-    private String name = null;
-    private int value = 0;
+    private String name;
+    private int value;
 
     public Attribute(String name, int value) {
         this.name = name;
@@ -23,5 +23,10 @@ public class Attribute {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return name + ": " + value;
     }
 }
