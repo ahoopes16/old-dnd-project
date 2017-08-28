@@ -33,7 +33,7 @@ public class CharacterMotivations {
     public String toString() {
         StringBuilder text = new StringBuilder();
         for(Motivation motivation: motivationList)
-            text.append("\n  " + motivation.toString() + "\n");
+            text.append("\n  " + motivation.toString());
 
         return text.toString();
     }
