@@ -2,6 +2,8 @@ package model.characters.races;
 
 import model.characters.Ability;
 
+import java.util.Arrays;
+
 public abstract class Race {
     private String name;
     private int speed;
@@ -45,6 +47,14 @@ public abstract class Race {
 
     public void setFeats(String[] feats) {
         this.feats = feats;
+    }
+
+    @Override
+    public String toString() {
+        return  "Race: " + name +
+                "\n Speed: " + speed +
+                "\n Ability Modifiers: " + Arrays.toString(abilityMods) +
+                "\n Feats: " + Arrays.toString(feats);
     }
 }
 
