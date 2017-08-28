@@ -103,15 +103,15 @@ public abstract class Class {
 
     @Override
     public String toString() {
-        return "Class: " + name +
-                "\n Hit Dice: " + hitDice +
-                "\n Base HP: " + baseHitPoints +
-                "\n Armor Proficiencies: " + armor +
-                "\n Weapons Proficiencies: " + weapons +
-                "\n Tool Proficiencies: " + tools +
-                "\n Saving Throws: " + savingThrows +
-                "\n Trainable Skills: " + skills +
-                "\n Skills Count: " + skillsCount +
-                "\n Starting Feats: " + Arrays.toString(startingFeats);
+        return  name +
+                "\n  Hit Dice: " + hitDice +
+                "\n  Base HP: " + baseHitPoints +
+                "\n  Armor Proficiencies: " + armor +
+                "\n  Weapons Proficiencies: " + weapons +
+                "\n  Tool Proficiencies: " + tools +
+                "\n  Saving Throws: " + savingThrows +
+                "\n  Trainable Skills: " + skills +
+                "\n  Skills Count: " + skillsCount +
+                "\n  Starting Feats: " + Arrays.toString(startingFeats);
     }
 }

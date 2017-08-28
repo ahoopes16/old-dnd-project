@@ -31,6 +31,10 @@ public class CharacterAttributes {
 
     @Override
     public String toString() {
-        return "CharacterAttributes: "+ Arrays.toString(attributesList);
+        StringBuilder text = new StringBuilder();
+        for(Attribute attribute: attributesList)
+            text.append("\n  " + attribute.toString());
+
+        return text.toString();
     }
 }

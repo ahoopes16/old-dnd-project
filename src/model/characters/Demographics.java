@@ -94,14 +94,13 @@ public class Demographics
 
     @Override
     public String toString() {
-        return "\nDemographics:" + '\n' +
-                "- size=" + size + '\n' +
-                "- age=" + age + '\n' +
-                "- weight=" + weight + '\n' +
-                "- height='" + height + '\n' +
-                "- gender='" + gender + '\n' +
-                "- eyes='" + eyes + '\n' +
-                "- hair='" + hair + '\n' +
-                "- skin='" + skin;
+        return  "\n  size: " + size +
+                "\n  age: " + age  +
+                "\n  weight: " + weight +
+                "\n  height: " + height +
+                "\n  gender: " + gender +
+                "\n  eyes: " + eyes +
+                "\n  hair: " + hair +
+                "\n  skin: " + skin;
     }
 }

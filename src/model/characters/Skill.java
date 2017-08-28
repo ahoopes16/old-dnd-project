@@ -38,6 +38,10 @@ public class Skill
 
     @Override
     public String toString() {
-        return skillName + " is level " + skillLevel + " and isTrained: " + isTrained;
+        StringBuilder string = new StringBuilder();
+        string.append(skillName + ": " + skillLevel);
+        if (isTrained)
+            string.append(" ***");
+        return string.toString();
     }
 }

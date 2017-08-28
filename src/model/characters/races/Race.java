@@ -51,10 +51,10 @@ public abstract class Race {
 
     @Override
     public String toString() {
-        return  "Race: " + name +
-                "\n Speed: " + speed +
-                "\n Ability Modifiers: " + Arrays.toString(abilityMods) +
-                "\n Feats: " + Arrays.toString(feats);
+        return  name +
+                "\n  Speed: " + speed +
+                "\n  Ability Modifiers: " + Arrays.toString(abilityMods) +
+                "\n  Feats: " + Arrays.toString(feats);
     }
 }
 

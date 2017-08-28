@@ -63,10 +63,8 @@ public class CharacterSkills {
     @Override
     public String toString() {
         StringBuilder text = new StringBuilder();
-        text.append("Character Skills:\n");
-
         for(Skill skill: skillsList)
-            text.append("- " + skill.toString() + "\n");
+            text.append("\n  " + skill.toString());
 
         return text.toString();
     }

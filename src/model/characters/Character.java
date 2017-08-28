@@ -4,8 +4,10 @@ package model.characters;
  * Currently also runs the data input screen but that will change**
  */
 import model.characters.classes.Class;
+import model.characters.classes.FighterClass;
 import model.characters.enums.CharacterAlignment;
 import model.characters.enums.CharacterSize;
+import model.characters.races.HumanRace;
 import model.characters.races.Race;
 
 import java.io.Serializable;
@@ -151,19 +153,33 @@ public class Character implements Serializable
     public String toString() {
         return playerName +
                 "\n Character Name: " + characterName +
-                "\n Character Level: " + characterLevel +
-                "\n Character Race: " + characterRace +
-                "\n Character Class: " + characterClass +
-                "\n Alignment: " + alignment +
-                "\n Demographics: " + demographics +
-                "\n Character Deity: " + characterDeity +
-                "\n Attributes: " + attributes +
-                "\n Abilities: " + abilities +
-                "\n Skills: " + skills +
-                "\n Motivations: " + motivations;
+                "\n Character Level: " + characterLevel + "\n" +
+                "\n Character Race: " + characterRace + "\n" +
+                "\n Character Class: " + characterClass + "\n" +
+                "\n Alignment: " + alignment + "\n" +
+                "\n Demographics: " + demographics + "\n" +
+                "\n Character Deity: " + characterDeity + "\n" +
+                "\n Attributes: " + attributes + "\n" +
+                "\n Abilities: " + abilities + "\n" +
+                "\n Skills: " + skills + "\n" +
+                "\n Motivations: " + motivations + "\n";
     }
 
     public static void main(String[] args) {
-        //test things here soonish
+        Character kevin = new Character(
+                "Alex Hoopes",
+                "Cockus Maximus",
+                1,
+                new HumanRace(),
+                new FighterClass(),
+                CharacterAlignment.Chaotic_Good,
+                new Demographics(CharacterSize.Medium, 21, 150, "5'9\"", "Male", "Blue", "Dark", "smooth"),
+                "None",
+                new CharacterAttributes(),
+                new CharacterAbilities(),
+                new CharacterSkills(),
+                new CharacterMotivations()
+        );
+        System.out.println(kevin);
     }
 }
