@@ -27,9 +27,13 @@ public class Character implements Serializable
 	private CharacterSkills skills;
 	private CharacterMotivations motivations;
 
-    private static final String[] CLASS_OPTIONS = {"class","Barbarian", "Bard", "Druid", "Monk", "Paladin", "Ranger", "Sorcerer", "Warlock"};
-	private static final String[] RACE_OPTIONS = {"race","Dragonborn", "Dwarf", "Eladrin", "Elf", "Gnome", "Half-elf", "Half-orc", "Halfling", "Human", "Tiefling"};
-	private static final String[] ALIGNMENTS = {"alignment","LawfulGood", "NeutralGood", "ChaoticGood", "LawfulNeutral", "Neutral", "ChaoticNeutral", "LawfulEvil", "NeutralEvil"};
+    private static final String[] CLASS_OPTIONS = {"class","Barbarian", "Bard", "Druid", "Fighter", "Monk", "Paladin",
+            "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"};
+	private static final String[] RACE_OPTIONS = {"race", "Dark Elf", "Dragonborn", "Forest Gnome", "Half-Elf", "Half-Orc",
+			"High Elf", "Hill Dwarf", "Human", "Lightfoot Halfling", "Mountain Dwarf", "Rock Gnome", "Stout Halfling",
+            "Tiefling", "Wood Elf"};
+	private static final String[] ALIGNMENTS = {"alignment","Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral",
+            "Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil"};
 
     public Character(String playerName, String characterName, int characterLevel, Race characterRace, Class characterClass, CharacterAlignment alignment, Demographics demographics,
                      String characterDeity, CharacterAttributes attributes, CharacterAbilities abilities, CharacterSkills skills, CharacterMotivations motivations) {

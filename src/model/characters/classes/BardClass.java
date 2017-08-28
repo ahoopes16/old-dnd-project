@@ -4,7 +4,7 @@ import model.Dice;
 
 public class BardClass extends Class {
 
-    public BardClass(String name, Dice hitDice, int baseHitPoints, Proficiency armor, Proficiency weapons, Proficiency tools, Proficiency savingThrows, Proficiency skills) {
+    public BardClass() {
         super(
             "Bard",
             new Dice(1,8),

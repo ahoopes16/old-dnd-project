@@ -3,7 +3,7 @@ package model.characters.classes;
 import model.Dice;
 
 public class WarlockClass extends Class {
-    public WarlockClass(String name, Dice hitDice, int baseHitPoints, Proficiency armor, Proficiency weapons, Proficiency tools, Proficiency savingThrows, Proficiency skills) {
+    public WarlockClass() {
         super(
             "Warlock",
             new Dice(1,8),
