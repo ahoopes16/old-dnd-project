@@ -4,15 +4,13 @@ package model.characters;
  * Currently also runs the data input screen but that will change**
  */
 import model.characters.classes.Class;
-import model.characters.classes.FighterClass;
+import model.characters.classes.RogueClass;
 import model.characters.enums.CharacterAlignment;
 import model.characters.enums.CharacterSize;
 import model.characters.races.HillDwarfRace;
-import model.characters.races.HumanRace;
 import model.characters.races.Race;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Character implements Serializable
 {
@@ -30,7 +28,8 @@ public class Character implements Serializable
 	private CharacterAbilities abilities;
 	private CharacterSkills skills;
 	private CharacterMotivations motivations;
-	private ArrayList<String> feats;
+	private String feats;
+	private String proficiencies;
 
     private static final String[] CLASS_OPTIONS = {"class","Barbarian", "Bard", "Druid", "Fighter", "Monk", "Paladin",
             "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"};
@@ -55,6 +54,7 @@ public class Character implements Serializable
         this.skills = skills;
         this.motivations = motivations;
         extractFeats();
+        extractProficiencies();
     }
 
     public static long getSerialVersionUID() {
@@ -157,16 +157,52 @@ public class Character implements Serializable
         this.motivations = motivations;
     }
 
+    public String getFeats() {
+        return feats;
+    }
+
+    public void setFeats(String feats) {
+        this.feats = feats;
+    }
+
+    public String getProficiencies() {
+        return proficiencies;
+    }
+
+    public void setProficiencies(String proficiencies) {
+        this.proficiencies = proficiencies;
+    }
+
     private void extractFeats() {
-        feats = new ArrayList<String>();
+        StringBuilder string = new StringBuilder();
 
         for (int i = 0; i < characterRace.getFeats().length; i++) {
-            feats.add(characterRace.getFeats()[i]);
+            string.append(characterRace.getFeats()[i] + "\n");
         }
 
         for (int i = 0; i < characterClass.getStartingFeats().length; i++) {
-            feats.add(characterClass.getStartingFeats()[i]);
+            string.append(characterClass.getStartingFeats()[i] + "\n");
         }
+
+        feats = string.toString();
+    }
+
+    private void extractProficiencies(){
+        StringBuilder string = new StringBuilder();
+
+        for (int i = 0; i < characterClass.getArmor().getProficiencies().length; i++){
+            string.append(characterClass.getArmor().getProficiencies()[i] + "\n");
+        }
+        for (int i = 0; i < characterClass.getWeapons().getProficiencies().length; i++){
+            string.append(characterClass.getWeapons().getProficiencies()[i] + "\n");
+        }
+
+        if (characterClass.getTools().getProficiencies()[0] != "None")
+        for (int i = 0; i < characterClass.getTools().getProficiencies().length; i++){
+            string.append(characterClass.getTools().getProficiencies()[i] + "\n");
+        }
+
+        proficiencies = string.toString();
     }
 
     @Override
@@ -192,7 +228,7 @@ public class Character implements Serializable
                 "Cockus Maximus",
                 1,
                 new HillDwarfRace(),
-                new FighterClass(),
+                new RogueClass(),
                 CharacterAlignment.Chaotic_Good,
                 new Demographics(CharacterSize.Medium, 21, 150, "5'9\"", "Male", "Blue", "Dark", "smooth"),
                 "None",
