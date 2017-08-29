@@ -32,12 +32,9 @@ public class MainMenu extends Application
 		loadButton = new Button("Load Existing Character");
 		exitButton = new Button("Exit");
 
-		exitButton.setOnAction(new javafx.event.EventHandler<javafx.event.ActionEvent>() {
-			@Override
-			public void handle(javafx.event.ActionEvent event) {
-				System.exit(0);
-			}
-		});
+		newButton.setOnAction(e-> buttonClicked(e));
+		loadButton.setOnAction(e-> buttonClicked(e));
+        exitButton.setOnAction(e-> buttonClicked(e));
 		
 		VBox layout = new VBox(10);
 		layout.setId("main");
@@ -52,5 +49,10 @@ public class MainMenu extends Application
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+
+	public void buttonClicked(javafx.event.ActionEvent ae) {
+	    if (ae.getSource() == exitButton)
+                System.exit(0);
+    }
 
 }
