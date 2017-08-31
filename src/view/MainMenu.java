@@ -11,7 +11,7 @@ import javafx.stage.StageStyle;
 import java.awt.event.ActionEvent;
 import java.beans.EventHandler;
 
-public class MainMenu extends Application 
+public class MainMenu extends Application
 {
 	private Button newButton;
 	private Button loadButton;
