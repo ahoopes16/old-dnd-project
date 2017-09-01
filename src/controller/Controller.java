@@ -62,8 +62,10 @@ public class Controller extends Application {
             scenes.push(scene);
         }
 
-        if (choice.equals("BACK"))
-            returnToPreviousScene();
+        if (choice.equals("BACK")){
+            scene = returnToPreviousScene();
+        }
+
 
         if (choice.equals("EXIT"))
             System.exit(0);
@@ -76,12 +78,12 @@ public class Controller extends Application {
         primaryStage.show();
     }
 
-    public void returnToPreviousScene() {
+    public Scene returnToPreviousScene() {
         //--First remove the scene from which we come.
         scenes.pop();
         //--Then push the scene where we are going and go there.
         //--But this is equivalent to just using peek().
-        primaryStage.setScene(scenes.peek());
+        return scenes.peek();
     }
 
     public void returnToMainScreen() {
