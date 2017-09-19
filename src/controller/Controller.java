@@ -2,17 +2,20 @@ package controller;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import view.MainMenuLayout;
 import view.NewCharacterLayout;
 
+import javafx.geometry.Rectangle2D;
 import java.util.Stack;
 
 public class Controller extends Application {
     private Stack<Scene> scenes = new Stack<Scene>();
-    private double windowWidth, windowHeight;
+    private Rectangle2D screen = Screen.getPrimary().getVisualBounds();
     private Stage primaryStage;
+    private Stage secondaryStage = new Stage();
 
     /**
      * @param args the command line arguments
@@ -24,17 +27,19 @@ public class Controller extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        primaryStage.setTitle("D&D For ME!");
-        primaryStage.setResizable(false);
+        this.primaryStage.setTitle("D&D For ME!");
+        this.primaryStage.setResizable(false);
 //        primaryStage.initStyle(StageStyle.UNDECORATED);
-        Scene scene = getScene("MAIN");
-        windowWidth = scene.getWidth();
-        windowHeight = scene.getHeight();
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        getScene("MAIN", this.primaryStage, secondaryStage);
+
+        secondaryStage.setTitle("New Character!");
+//        secondaryStage.setX(screen.getMinX());
+//        secondaryStage.setY(screen.getMinY());
+//        secondaryStage.setWidth(screen.getWidth());
+//        secondaryStage.setHeight(screen.getHeight());
     }
 
-    public Scene getScene(String choice) {
+    public void getScene(String choice, Stage stage, Stage currentStage) {
 
         Scene scene = null;
 
@@ -42,8 +47,7 @@ public class Controller extends Application {
             MainMenuLayout layout = new MainMenuLayout();
             layout.setSceneListener(new SceneListener() {
                 @Override
-                public void sceneChanged(String choice) {
-                    setScene(choice);
+                public void sceneChanged(String choice) { getScene(choice, primaryStage, secondaryStage);
                 }
             });
             scene = new Scene(layout, 300, 300);
@@ -55,10 +59,10 @@ public class Controller extends Application {
             layout.setSceneListener(new SceneListener() {
                 @Override
                 public void sceneChanged(String choice) {
-                    setScene(choice);
+                    getScene(choice, secondaryStage, primaryStage);
                 }
             });
-            scene = new Scene(layout, 700, 700);
+            scene = new Scene(layout, screen.getWidth(), screen.getHeight());
             scenes.push(scene);
         }
 
@@ -66,16 +70,14 @@ public class Controller extends Application {
             scene = returnToPreviousScene();
         }
 
-
         if (choice.equals("EXIT"))
             System.exit(0);
 
-        return scene;
-    }
 
-    public void setScene(String choice) {
-        primaryStage.setScene(getScene(choice));
-        primaryStage.show();
+        //TODO FIGURE OUT THE WEIRD STAGE TRANSITION THINGY IT TAKES A STEP TOO LONG
+        stage.setScene(scene);
+        stage.show();
+        currentStage.hide();
     }
 
     public Scene returnToPreviousScene() {
@@ -90,6 +92,6 @@ public class Controller extends Application {
         //--Clear the scene stack.
         scenes.clear();
         //--Bring up the splash screen
-        setScene("MAIN");
+        getScene("MAIN", primaryStage, secondaryStage);
     }
 }
