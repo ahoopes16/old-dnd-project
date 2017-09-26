@@ -11,7 +11,6 @@ public class NewCharacterLayout extends VBox {
     public NewCharacterLayout() {
         super(10);
         setId("newChar");
-        setPadding(new Insets(75,0,75,150));
 
         back = new Button("Go back");
         back.setOnAction(e-> buttonClicked(e));

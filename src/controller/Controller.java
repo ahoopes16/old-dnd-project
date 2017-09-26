@@ -33,6 +33,7 @@ public class Controller extends Application {
         getScene("MAIN", this.primaryStage, secondaryStage);
 
         secondaryStage.setTitle("New Character!");
+        secondaryStage.setMaximized(true);
 //        secondaryStage.setX(screen.getMinX());
 //        secondaryStage.setY(screen.getMinY());
 //        secondaryStage.setWidth(screen.getWidth());
@@ -47,7 +48,8 @@ public class Controller extends Application {
             MainMenuLayout layout = new MainMenuLayout();
             layout.setSceneListener(new SceneListener() {
                 @Override
-                public void sceneChanged(String choice) { getScene(choice, primaryStage, secondaryStage);
+                public void sceneChanged(String choice) {
+                    getScene(choice, secondaryStage, primaryStage);
                 }
             });
             scene = new Scene(layout, 300, 300);
@@ -59,10 +61,10 @@ public class Controller extends Application {
             layout.setSceneListener(new SceneListener() {
                 @Override
                 public void sceneChanged(String choice) {
-                    getScene(choice, secondaryStage, primaryStage);
+                    getScene(choice, primaryStage, secondaryStage);
                 }
             });
-            scene = new Scene(layout, screen.getWidth(), screen.getHeight());
+            scene = new Scene(layout);
             scenes.push(scene);
         }
 
@@ -73,8 +75,6 @@ public class Controller extends Application {
         if (choice.equals("EXIT"))
             System.exit(0);
 
-
-        //TODO FIGURE OUT THE WEIRD STAGE TRANSITION THINGY IT TAKES A STEP TOO LONG
         stage.setScene(scene);
         stage.show();
         currentStage.hide();
