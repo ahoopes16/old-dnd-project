@@ -46,8 +46,13 @@ public class Controller extends Application {
             MainMenuLayout layout = new MainMenuLayout();
             layout.setSceneListener(new SceneListener() {
                 @Override
-                public void sceneChanged(String choice) {
+                public void sceneAndStageChanged(String choice) {
                     getScene(choice, secondaryStage, primaryStage);
+                }
+
+                @Override
+                public void sceneChanged(String choice) {
+                    //never changing only the scene from main
                 }
             });
             scene = new Scene(layout, 300, 300);
@@ -58,8 +63,13 @@ public class Controller extends Application {
             NewCharacterLayout layout = new NewCharacterLayout();
             layout.setSceneListener(new SceneListener() {
                 @Override
-                public void sceneChanged(String choice) {
+                public void sceneAndStageChanged(String choice) {
                     getScene(choice, primaryStage, secondaryStage);
+                }
+
+                @Override
+                public void sceneChanged(String choice) {
+                    getScene(choice, secondaryStage, secondaryStage);
                 }
             });
             scene = new Scene(layout);
@@ -71,10 +81,16 @@ public class Controller extends Application {
             LoadCharacterLayout layout = new LoadCharacterLayout();
             layout.setSceneListener(new SceneListener() {
                 @Override
-                public void sceneChanged(String choice) {
+                public void sceneAndStageChanged(String choice) {
                     getScene(choice, primaryStage, secondaryStage);
                 }
+
+                @Override
+                public void sceneChanged(String choice) {
+                    getScene(choice, secondaryStage, secondaryStage);
+                }
             });
+
             scene = new Scene(layout);
             scenes.push(scene);
             secondaryStage.setTitle("Load Character!");
@@ -89,7 +105,8 @@ public class Controller extends Application {
 
         stage.setScene(scene);
         stage.show();
-        currentStage.hide();
+        if (stage != currentStage)
+            currentStage.hide();
     }
 
     public Scene returnToPreviousScene() {
@@ -104,6 +121,6 @@ public class Controller extends Application {
         //--Clear the scene stack.
         scenes.clear();
         //--Bring up the splash screen
-        getScene("MAIN", primaryStage, secondaryStage);
+        getScene("MAIN", secondaryStage, primaryStage);
     }
 }
