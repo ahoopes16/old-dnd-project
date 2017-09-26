@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import view.LoadCharacterLayout;
 import view.MainMenuLayout;
 import view.NewCharacterLayout;
 
@@ -27,17 +28,14 @@ public class Controller extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("D&D For ME!");
         this.primaryStage.setResizable(false);
-//        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         getScene("MAIN", this.primaryStage, secondaryStage);
 
-        secondaryStage.setTitle("New Character!");
+        secondaryStage.setMinHeight(800);
+        secondaryStage.setMinWidth(800);
         secondaryStage.setMaximized(true);
-//        secondaryStage.setX(screen.getMinX());
-//        secondaryStage.setY(screen.getMinY());
-//        secondaryStage.setWidth(screen.getWidth());
-//        secondaryStage.setHeight(screen.getHeight());
+
     }
 
     public void getScene(String choice, Stage stage, Stage currentStage) {
@@ -66,6 +64,20 @@ public class Controller extends Application {
             });
             scene = new Scene(layout);
             scenes.push(scene);
+            stage.setTitle("New Character");
+        }
+
+        if (choice.equals("LOADCHAR")) {
+            LoadCharacterLayout layout = new LoadCharacterLayout();
+            layout.setSceneListener(new SceneListener() {
+                @Override
+                public void sceneChanged(String choice) {
+                    getScene(choice, primaryStage, secondaryStage);
+                }
+            });
+            scene = new Scene(layout);
+            scenes.push(scene);
+            secondaryStage.setTitle("Load Character!");
         }
 
         if (choice.equals("BACK")){

@@ -41,6 +41,12 @@ public class MainMenuLayout extends VBox {
                 listener.sceneChanged("NEWCHAR");
             }
         }
+
+        if (ae.getSource() == loadButton) {
+            if (listener != null) {
+                listener.sceneChanged("LOADCHAR");
+            }
+        }
     }
 
     public void setSceneListener(SceneListener listener) {
